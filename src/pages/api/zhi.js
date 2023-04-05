@@ -566,17 +566,18 @@ function getZse96(cookie, url, body, zse93, x81) {
   return `2.0_${D(e)}`
 }
 
-const cookie = `_zap=bb92d33c-0a9e-425b-ae72-a9fb9a574e54; _xsrf=7376f3b1-9f13-4c3b-8d57-ed1a118a143e; d_c0=ANCW96oK1BWPTsvJdsswa5U5WLIBChsm4js=|1667787128; KLBRSID=d017ffedd50a8c265f0e648afe355952|1667787128|1667787127; SESSIONID=tn6WdE87SB0SsVGvtdqIMm6ly3jjB6hcpPo3H3mMFAG`
-const url =
-  '/api/v4/search_v3?gk_version=gz-gaokao&t=general&q=%E7%8B%BC%E7%9A%84%E5%AD%A9%E5%AD%90%E9%9B%A8%E5%92%8C%E9%9B%AA&correction=1&offset=0&limit=20&filter_fields=&lc_idx=0&show_all_topics=0&search_source=Normal'
-const zse93 = '101_3_3.0'
-const x81 = ''
-const body = "{\"type\":\"up\"}"
-console.log(getZse96(cookie, url,body, zse93, x81))
+// const cookie = `_zap=bb92d33c-0a9e-425b-ae72-a9fb9a574e54; _xsrf=7376f3b1-9f13-4c3b-8d57-ed1a118a143e; d_c0=ANCW96oK1BWPTsvJdsswa5U5WLIBChsm4js=|1667787128; KLBRSID=d017ffedd50a8c265f0e648afe355952|1667787128|1667787127; SESSIONID=tn6WdE87SB0SsVGvtdqIMm6ly3jjB6hcpPo3H3mMFAG`
+// const url =
+//   '/api/v4/search_v3?gk_version=gz-gaokao&t=general&q=%E7%8B%BC%E7%9A%84%E5%AD%A9%E5%AD%90%E9%9B%A8%E5%92%8C%E9%9B%AA&correction=1&offset=0&limit=20&filter_fields=&lc_idx=0&show_all_topics=0&search_source=Normal'
+// const zse93 = '101_3_3.0'
+// const x81 = ''
+// const body = "{\"type\":\"up\"}"
+// console.log(getZse96(cookie, url,body, zse93, x81))
 
 
 export default function handler(request, response) {
   var reqBody = request.body;
+  console.log(reqBody)
   var zse96 = getZse96(reqBody.cookie,reqBody.url,reqBody.body,reqBody.zse93,reqBody.x81)
   response.status(200).json({
     zse96: zse96,

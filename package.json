@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "jsdom": "^21.1.1",
+    "canvas": "^2.11.2",
+    "node-pre-gyp": "^0.17.0",
+    "jsdom": "^18.1.1",
     "md5": "^2.3.0",
     "next": "13.2.4",
     "react": "18.2.0",
