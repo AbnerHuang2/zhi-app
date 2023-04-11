@@ -561,11 +561,14 @@ function encryptCookie(cookie) {
 
 
 function getZse96(cookie, url, body, zse93, x81) {
-  let s = `${zse93}+${url}+${encryptCookie(cookie)}+${body}+${x81}`
+  let s = `${zse93}+${url}+${encryptCookie(cookie)}`;
+  if(body){
+    s = s + `${body}`
+  }
   console.log(s)
-  // if (x81) {
-  //   s = s + `+${x81}`
-  // }
+  if (x81) {
+    s = s + `+${x81}`
+  }
   let e = md5(s)
   return `2.0_${D(e)}`
 }
